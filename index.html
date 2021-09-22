@@ -15,16 +15,16 @@
 </head>
 <body>
   <div class='nav'>
-    <a href="#">Listen</a>
-    <a href="#">Support Us</a>
-    <sl-button>Log in with Supercast</sl-button>
+    <!--<a href="#">Listen</a>
+    <a href="#">Support Us</a>-->
+    <sl-button>hiddenforces.io</sl-button>
   </div>
 
   <div class='hero'>
-    <img src="images/podcast-mic-blue.png">
+    <img src="images/logo.jpeg">
     <div>
-      <h1>Chatting with Cheeseburgers Podcast</h1>
-      <p>A weekly podcast about nothing. Hosted by a couple of people. Sometimes guests show up.</p>
+      <h1>Hidden Forces - Critical Thinking for A Complex World</h1>
+      <p>Get an edge with Hidden Forces, where podcast host Demetri Kofinas teaches you how to think critically about the systems of power that structure our world.</p>
     </div>
   </div>
 
@@ -32,6 +32,7 @@
     <supercast-gate subdomain="hiddenforces">
       <div slot="available">
         <h2>Add to your player</h2>
+        <sl-button data-action="logout">Log Out</sl-button>
         
       </div>
       <div slot="unavailable">
@@ -55,6 +56,12 @@
     document.querySelectorAll("[data-action='login']").forEach(el => {
       el.addEventListener('click', () => {
         Supercast.login({ subdomain: 'hiddenforces'})
+      });
+    })
+
+    document.querySelectorAll("[data-action='logout']").forEach(el => {
+      el.addEventListener('click', () => {
+        Supercast.logout({ subdomain: 'hiddenforces'})
       });
     })
 
