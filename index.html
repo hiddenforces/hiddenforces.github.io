@@ -11,7 +11,7 @@
 
   <link rel="stylesheet" href="css/main.css" />
 
-  <script src="https://supercast.test/js/embed.js"></script>
+  <script src="https://supercast.tech/js/embed.js"></script>
 </head>
 <body>
   <div class='nav'>
@@ -29,12 +29,13 @@
   </div>
 
   <div class='content'>
-    <supercast-gate subdomain="example" environment="development">
+    <supercast-gate subdomain="hiddenforces">
       <div slot="available">
         <h2>Add to your player</h2>
-        <supercast-player-links subdomain="example" environment="development"></supercast-player-links>
+        
       </div>
       <div slot="unavailable">
+        <div id="episodes"></div>
         <h2>Become a member!</h2>
 
         <p>This page requires a premium subscription.</p>
@@ -47,15 +48,19 @@
   <script>
     document.querySelectorAll("[data-action='startPurchase']").forEach(el => {
       el.addEventListener('click', () => {
-        Supercast.startPurchase({ planId: 3, subdomain: 'example', environment: 'development'})
+        Supercast.startPurchase({ planId: 1794, subdomain: 'hiddenforces'})
       });
     })
 
     document.querySelectorAll("[data-action='login']").forEach(el => {
       el.addEventListener('click', () => {
-        Supercast.login({ subdomain: 'example', environment: 'development'})
+        Supercast.login({ subdomain: 'hiddenforces'})
       });
     })
+
+    document.querySelector('#episodes'), function() {
+      Supercast.episodes({ subdomain: 'hiddenforces' });
+        }
   </script>
 </body>
 </html>
