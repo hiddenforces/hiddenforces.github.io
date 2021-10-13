@@ -14,16 +14,19 @@
   <script src="https://supercast.tech/js/embed.js"></script>
 </head>
 <body>
-  <div class='nav'>
-    <!--<a href="#">Listen</a>
-    <a href="#">Support Us</a>-->
+  <!--<div class='nav'>
+    <a href="#">Listen</a>
+    <a href="#">Support Us</a>
     <sl-button>hiddenforces.io</sl-button>
-  </div>
+  </div>-->
 
   <div class='nav'>
     <supercast-gate subdomain="hiddenforces">
       <div slot="available">
         <sl-button data-action="logout">Logout</sl-button>
+      </div>
+      <div slot="unavailable">
+        <sl-button>hiddenforces.io</sl-button>
       </div>
     </supercast-gate>  
   </div>
