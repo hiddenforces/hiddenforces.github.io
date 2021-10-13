@@ -20,6 +20,14 @@
     <sl-button>hiddenforces.io</sl-button>
   </div>
 
+  <div class='nav'>
+    <supercast-gate subdomain="hiddenforces">
+      <div slot="available">
+        <sl-button data-action="logout">Logout</sl-button>
+      </div>
+    </supercast-gate>  
+  </div>
+
   <div class='hero'>
     <img src="images/logo.jpeg">
     <div>
@@ -32,6 +40,7 @@
     <supercast-gate subdomain="hiddenforces">
       <div slot="available">
         <button id="episodes">Get Episodes</button><br>
+        <supercast-player-links subdomain="hiddenforces"></supercast-player-links>
         <h2>A History of the Future: Hope & Fear in the Social Smartphone Era | Rory Cellan-Jones</h2>
         <audio controls="" src="https://hiddenforces.supercast.tech/episodes/59275.mp3?key=yyevWvpvyCKh7oeaHhEg61AY"></audio>        
       </div>
@@ -55,7 +64,13 @@
 
     document.querySelectorAll("[data-action='login']").forEach(el => {
       el.addEventListener('click', () => {
-        Supercast.login({ subdomain: 'hiddenforces'})
+        Supercast.startLogin({ subdomain: 'hiddenforces'})
+      });
+    })
+
+    document.querySelectorAll("[data-action='logout']").forEach(el => {
+      el.addEventListener('click', () => {
+        Supercast.startlogout({ subdomain: 'hiddenforces'})
       });
     })
 
