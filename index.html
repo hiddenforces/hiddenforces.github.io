@@ -73,7 +73,7 @@
 
     document.querySelectorAll("[data-action='logout']").forEach(el => {
       el.addEventListener('click', () => {
-        Supercast.startlogout({ subdomain: 'hiddenforces'})
+        Supercast.logout({ subdomain: 'hiddenforces' });
       });
     })
 
