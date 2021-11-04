@@ -43,7 +43,7 @@
     <supercast-gate subdomain="hiddenforces">
       <div slot="available">
         <button id="episodes">Get Episodes</button><br>
-        <supercast-player-links subdomain="hiddenforces"></supercast-player-links>
+       <!--  <supercast-player-links subdomain="hiddenforces"></supercast-player-links> -->
         <h2>A History of the Future: Hope & Fear in the Social Smartphone Era | Rory Cellan-Jones</h2>
         <audio controls="" src="https://hiddenforces.supercast.tech/episodes/59275.mp3?key=yyevWvpvyCKh7oeaHhEg61AY"></audio>        
       </div>
@@ -80,6 +80,23 @@
     document.querySelector('#episodes').addEventListener('click', function() {
           Supercast.episodes({ subdomain: 'hiddenforces' });
         })
+
+        async function getData() {
+          return await Supercast.episode({ subdomain: 'hiddenforces', id:"59275" });
+        }
+       getData().then(data => {
+        const episode = data;
+        console.log(episode.url);     
+        })
+
+        async function getUser() {
+          return await Supercast.currentUser({ subdomain: 'hiddenforces'});
+        }
+        getUser().then(data => {
+          const user = data;
+          console.log(user.plan_id);
+        });
+
   </script>
 </body>
 </html>
