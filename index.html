@@ -98,8 +98,6 @@
         subdomain: 'hiddenforces'
       });
     })
-
-    window.addEventListener('supercast-login-state-changed', (user) => {
       
       async function getData() {
       return await Supercast.episode({
@@ -132,7 +130,6 @@
       const user = data;
       console.log(user);
     });
-  })
 
   </script>
 </body>
